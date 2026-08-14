@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Média e Conceito</title>
+    <style>
+        header{
+            text-align:center;
+            padding:20px;
+            background:#549bff;
+            border-bottom:2px 
+        }
+
+        main{
+            max-width:1000px;
+            margin:auto;
+            padding:20px; ;}
+        section{
+            background:#67a6ff;
+            margin:20px 0;
+            padding:20px;
+            border-radius:15px}
+           h1,h2{color:#005092}
+          footer{text-align:center;
+            padding: 60px;
+            background-color: #549bff;
+            
+          } 
+         button{padding:20px; 
+            background-color: #5990dd;
+            color:white;
+            margin: 3px;
+            border:none;
+            border-radius:8px}
+         body{background-color: #d6f5ff;}
+         a{color:#64b9ff ;
+        size: 20%;}
+        .meu-botao {
+            background-color: #64b9ff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+          }
+    </style>
+</head>
+<body>
+
+<h2>Notas do Aluno</h2>
+
+<button onclick="calcular()">Calcular Média</button>
+
+<script>
+function calcular() {
+
+    var nota1 = parseFloat(prompt("Digite a primeira nota:"));
+    var nota2 = parseFloat(prompt("Digite a segunda nota:"));
+
+    var media = (nota1 + nota2) / 2;
+    var conceito;
+
+    if (media >= 9 && media <= 10) {
+        conceito = "A";
+    } else if (media >= 7.5) {
+        conceito = "B";
+    } else if (media >= 6) {
+        conceito = "C";
+    } else if (media >= 4) {
+        conceito = "D";
+    } else {
+        conceito = "E";
+    }
+
+    alert("Nota 1: " + nota1);
+    alert("Nota 2: " + nota2);
+    alert("Média: " + media);
+    alert("Conceito: " + conceito);
+
+    if (conceito == "A" || conceito == "B" || conceito == "C") {
+        alert("Situação: APROVADO");
+    } else {
+        alert("Situação: REPROVADO");
+    }
+
+}
+</script>
+<a href="index.html" class="meu-botao">Voltar a pagina inicial</a>
+</body>
+</html>

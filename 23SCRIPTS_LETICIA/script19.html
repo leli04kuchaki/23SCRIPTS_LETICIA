@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Inteiro ou Decimal</title>
+    <style>
+        header{
+            text-align:center;
+            padding:20px;
+            background:#549bff;
+            border-bottom:2px 
+        }
+
+        main{
+            max-width:1000px;
+            margin:auto;
+            padding:20px; ;}
+        section{
+            background:#67a6ff;
+            margin:20px 0;
+            padding:20px;
+            border-radius:15px}
+           h1,h2{color:#005092}
+          footer{text-align:center;
+            padding: 60px;
+            background-color: #549bff;
+            
+          } 
+         button{padding:20px; 
+            background-color: #5990dd;
+            color:white;
+            margin: 3px;
+            border:none;
+            border-radius:8px}
+         body{background-color: #d6f5ff;}
+         a{color:#64b9ff ;
+        size: 20%;}
+        .meu-botao {
+            background-color: #64b9ff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+          }
+    </style>
+</head>
+<body>
+
+<h2>Verificar número</h2>
+
+<label>Digite um número:</label>
+<input type="number" id="num" step="any">
+<button onclick="verificar()">Verificar</button>
+
+<script>
+function verificar() {
+    var num = parseFloat(document.getElementById("num").value);
+
+    if (isNaN(num)) {
+        alert("Digite um número válido!");
+        return;
+    }
+
+    if (num === Math.floor(num)) {
+        alert("O número é INTEIRO");
+    } else {
+        alert("O número é DECIMAL");
+    }
+}
+</script>
+<a href="index.html" class="meu-botao">Voltar a pagina inicial</a>
+</body>
+</html>

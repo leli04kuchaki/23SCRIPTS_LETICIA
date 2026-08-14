@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Validar Data</title>
+    <style>
+        header{
+            text-align:center;
+            padding:20px;
+            background:#549bff;
+            border-bottom:2px 
+        }
+
+        main{
+            max-width:1000px;
+            margin:auto;
+            padding:20px; ;}
+        section{
+            background:#67a6ff;
+            margin:20px 0;
+            padding:20px;
+            border-radius:15px}
+           h1,h2{color:#005092}
+          footer{text-align:center;
+            padding: 60px;
+            background-color: #549bff;
+            
+          } 
+         button{padding:20px; 
+            background-color: #5990dd;
+            color:white;
+            margin: 3px;
+            border:none;
+            border-radius:8px}
+         body{background-color: #d6f5ff;}
+         a{color:#64b9ff ;
+        size: 20%;}
+        .meu-botao {
+            background-color: #64b9ff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+          }
+    </style>
+</head>
+<body>
+
+<h2>Verificar Data</h2>
+
+<button onclick="verificar()">Iniciar</button>
+
+<script>
+function verificar() {
+
+    var data = prompt("Digite uma data (dd/mm/aaaa):");
+
+    var partes = data.split("/");
+
+    var dia = parseInt(partes[0]);
+    var mes = parseInt(partes[1]);
+    var ano = parseInt(partes[2]);
+
+    if (partes.length != 3) {
+        alert("Data inválida!");
+        return;
+    }
+
+    if (mes < 1 || mes > 12) {
+        alert("Data inválida!");
+        return;
+    }
+
+    var diasNoMes = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+    
+    if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+        diasNoMes[1] = 29;
+    }
+
+    if (dia < 1 || dia > diasNoMes[mes - 1]) {
+        alert("Data inválida!");
+    } else {
+        alert("Data válida!");
+    }
+    <a href="index.html" class="meu-botao">Voltar a pagina inicial</a>
+}
+</script>
+
+</body>
+</html>

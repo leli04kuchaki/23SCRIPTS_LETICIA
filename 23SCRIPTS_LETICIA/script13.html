@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Equação do 2º Grau</title>
+    <style>
+        header{
+            text-align:center;
+            padding:20px;
+            background:#549bff;
+            border-bottom:2px 
+        }
+
+        main{
+            max-width:1000px;
+            margin:auto;
+            padding:20px; ;}
+        section{
+            background:#67a6ff;
+            margin:20px 0;
+            padding:20px;
+            border-radius:15px}
+           h1,h2{color:#005092}
+          footer{text-align:center;
+            padding: 60px;
+            background-color: #549bff;
+            
+          } 
+         button{padding:20px; 
+            background-color: #5990dd;
+            color:white;
+            margin: 3px;
+            border:none;
+            border-radius:8px}
+         body{background-color: #d6f5ff;}
+         a{color:#64b9ff ;
+        size: 20%;}
+        .meu-botao {
+            background-color: #64b9ff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+          }
+    </style>
+</head>
+<body>
+
+<h2>Resolver Equação do 2º Grau</h2>
+
+<button onclick="calcular()">Iniciar</button>
+
+<script>
+function calcular() {
+
+    var a = parseFloat(prompt("Digite o valor de a:"));
+    var b = parseFloat(prompt("Digite o valor de b:"));
+    var c = parseFloat(prompt("Digite o valor de c:"));
+
+    if (a == 0) {
+        alert("Isso não é uma equação do 2º grau, porque 'a' não pode ser zero.");
+    } else {
+
+        var delta = (b * b) - (4 * a * c);
+
+        if (delta < 0) {
+            alert("Não tem raízes reais, porque o delta deu negativo.");
+        } else if (delta == 0) {
+
+            var x = (-b) / (2 * a);
+            alert("Só existe uma raiz real: " + x);
+
+        } else {
+
+            var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+            alert("Achei duas raízes:");
+            alert("X1 = " + x1);
+            alert("X2 = " + x2);
+        }
+    }
+}
+</script>
+<a href="index.html" class="meu-botao">Voltar a pagina inicial</a>
+</body>
+</html>

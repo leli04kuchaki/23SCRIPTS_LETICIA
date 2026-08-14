@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="br-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Maior e Menor</title>
+    <style>
+        header{
+            text-align:center;
+            padding:20px;
+            background:#549bff;
+            border-bottom:2px 
+        }
+
+        main{
+            max-width:1000px;
+            margin:auto;
+            padding:20px; ;}
+        section{
+            background:#67a6ff;
+            margin:20px 0;
+            padding:20px;
+            border-radius:15px}
+           h1,h2{color:#005092}
+          footer{text-align:center;
+            padding: 60px;
+            background-color: #549bff;
+            
+          } 
+         button{padding:20px; 
+            background-color: #5990dd;
+            color:white;
+            margin: 3px;
+            border:none;
+            border-radius:8px}
+         body{background-color: #d6f5ff;}
+         a{color:#64b9ff ;
+        size: 20%;}
+        .meu-botao {
+            background-color: #64b9ff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+          }
+    </style>
+</head>
+<body>
+
+<h2>Maior e Menor Número</h2>
+
+ <input type="number" id="n1"><br><br>
+ <input type="number" id="n2"><br><br>
+: <input type="number" id="n3"><br><br>
+
+<button onclick="verificar()">Verificar</button>
+
+<script>
+function verificar() {
+    var n1 = parseInt(document.getElementById("n1").value);
+    var n2 = parseInt(document.getElementById("n2").value);
+    var n3 = parseInt(document.getElementById("n3").value);
+
+    var maior = n1;
+    var menor = n1;
+
+    if (n2 > maior) {
+        maior = n2;
+    }
+
+    if (n3 > maior) {
+        maior = n3;
+    }
+
+    if (n2 < menor) {
+        menor = n2;
+    }
+
+    if (n3 < menor) {
+        menor = n3;
+    }
+
+    alert("Maior: " + maior + "\nMenor: " + menor);
+}
+</script>
+<a href="index.html" class="meu-botao">Voltar a pagina inicial</a>
+</body>
+</html>

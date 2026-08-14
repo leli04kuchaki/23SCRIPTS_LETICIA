@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Reajuste Salarial</title>
+    <style>
+        header{
+            text-align:center;
+            padding:20px;
+            background:#549bff;
+            border-bottom:2px 
+        }
+
+        main{
+            max-width:1000px;
+            margin:auto;
+            padding:20px; ;}
+        section{
+            background:#67a6ff;
+            margin:20px 0;
+            padding:20px;
+            border-radius:15px}
+           h1,h2{color:#005092}
+          footer{text-align:center;
+            padding: 60px;
+            background-color: #549bff;
+            
+          } 
+         button{padding:20px; 
+            background-color: #5990dd;
+            color:white;
+            margin: 3px;
+            border:none;
+            border-radius:8px}
+         body{background-color: #d6f5ff;}
+         a{color:#64b9ff ;
+        size: 20%;}
+        .meu-botao {
+            background-color: #64b9ff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+          }
+    </style>
+</head>
+<body>
+
+<h2>Reajuste Salarial - Tabajara</h2>
+
+<input type="number" id="salario"><br><br>
+
+<button onclick="calcular()">Calcular</button>
+
+<script>
+function calcular() {
+
+    var salario = parseFloat(document.getElementById("salario").value);
+
+    var percentual;
+    var aumento;
+    var novoSalario;
+
+    if (salario <= 1480) {
+        percentual = 20;
+    } else if (salario <= 1900) {
+        percentual = 15;
+    } else if (salario <= 2500) {
+        percentual = 10;
+    } else {
+        percentual = 5;
+    }
+
+    aumento = salario * percentual / 100;
+    novoSalario = salario + aumento;
+
+    alert("Salário antes do reajuste: R$ " + salario);
+    alert("Percentual de aumento: " + percentual + "%");
+    alert("Valor do aumento: R$ " + aumento);
+    alert("Novo salário: R$ " + novoSalario);
+
+}
+</script>
+<a href="index.html" class="meu-botao">Voltar a pagina inicial</a>
+</body>
+</html>
